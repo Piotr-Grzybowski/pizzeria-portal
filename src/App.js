@@ -16,7 +16,7 @@ const App = () => {
     <MainLayout>
       <Switch>
         <Route exact path={`${process.env.PUBLIC_URL}/`} component={HomePage} />
-        <Route exact path={process.env.PUBLIC_URL + '/login'} component={Login} />
+        <Route exact path={`${process.env.PUBLIC_URL}/login`} component={Login} />
         <Route exact path={`${process.env.PUBLIC_URL}/tables`} component={Tables} />
         <Route exact path={`${process.env.PUBLIC_URL}/tables/booking/:id`} component={BookingEvent} />
         <Route exact path={`${process.env.PUBLIC_URL}/tables/event/:id`} component={BookingEvent} />
