@@ -1,11 +1,22 @@
-import {combineReducers, createStore} from 'redux';
-import globalReducer from './globalRedux';
+// eslint-disable-next-line no-unused-vars
+import {combineReducers, createStore, applyMiddleware} from 'redux';
 
-const initialState = {};
+import productReducer from './productRedux.js';
+
+// define initial state and shallow-merge initial data
+const initialState = {
+  products: {
+    loading: {
+      active: false,
+      error: false,
+    },
+    data: [],
+  },
+};
 
 // define reducers
 const reducers = {
-  globalReducer,
+  products: productReducer,
 };
 
 // add blank reducers for initial state properties without reducers
@@ -15,12 +26,11 @@ Object.keys(initialState).forEach(item => {
   }
 });
 
-// merge all reducers
-const storeReducer = combineReducers(reducers);
+const combinedReducers = combineReducers(reducers);
 
 // create store
 const store = createStore(
-  storeReducer,
+  combinedReducers,
   initialState,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
