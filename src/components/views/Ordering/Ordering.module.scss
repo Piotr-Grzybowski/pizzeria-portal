@@ -1,0 +1,21 @@
+@import "../../../styles/settings.scss";
+@import "../../../styles/typography.scss";
+
+.root {
+  padding: $base-size;
+  margin: auto;
+  background-color: #fff;
+}
+
+.header {
+  text-align: center;
+  margin: 50px auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}

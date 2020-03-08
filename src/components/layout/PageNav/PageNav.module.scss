@@ -1,7 +1,11 @@
 @import '../../../styles/settings.scss';
 
 .component {
-  
+  padding: $base-size;
+  margin: auto;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
   NavLink {
     color: $color-light;
     font-size: 48px;
